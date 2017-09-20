@@ -7,15 +7,20 @@ Sumário
 1. COMPONENTES
 
 Integrantes do grupo
-primeiro_componente_do_grupo:email_primeiro_componente@dominio.com
-segundo_componente_do_grupo:email_segundo_componente@dominio.com
+Lucas Eduardo Sant'anna Gianordoli: gianordolilucas@gmail.com
 
 2.INTRODUÇÃO E MOTIVAÇAO
 
-Este documento contém a especificação do projeto do banco de dados 
-e motivação da escolha realizada. 
+A criação do banco de dados será realizada afim de criar suporte para a implantação de um serviço privado de aluguel de bicicletas. O maior objetivo é criar soluções sustentaveis para circulação de pessoas que circula dentro da própia cidade, com isso garantindo um menor fluxo de carros. Menos consumo de combustível, cidade menos poluída.  
 
 3.MINI-MUNDO
+
+   O objetivo do projeto é desenvolvimento de um banco de dados visando gestão do aluguel de bicicletas. Como o projeto estará na fase de implantação o sistema deve ser capaz de gerar dados de fluxo, com intuito de obter informações e conseguir uma melhor aceitação.
+   Para o aluguel de um bicicleta o usuário precisa relaizar cadastro prévio em nosso site. Assim o cliente irá informar seus dados e escolherá um dos planos existentes. Após seu cadastro o cliente irá a uma das bases bicicletárias onde em um "parquimetro" ele entrará em sua conta com login e senha e informará o quantidade de horas que pretende alocar. 
+   O projeto conta ainda com um central de monitoramento, que fica responsavel pela vigilância das bicicletas, pois caso após oito horas depois do aluguel o cliente ainda não tenha devolvido a central entrará em contatato, para solucionar eventuais problemas. E após 24 horas ela é dada como furtada, e as informações do gps da bicicleta sera enviada a policia para gerar boletim de ocorrência.
+   
+   Para que o sistema seja capaz de realizar essas operações precisamos explicitar como serão armazenados os dados:
+   Será cadastado no sistema as bicicletas e bases. As bicicletas são compostas de um gps para monitoramento, e precisamos salvar o estado atual e historico de transação.
 
 Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) 
 Entrevista com o usuário e identificação dos requisitos.
