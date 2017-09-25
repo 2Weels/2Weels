@@ -20,31 +20,49 @@ A criação do banco de dados será realizada afim de criar suporte para a impla
    O projeto conta ainda com um central de monitoramento, que fica responsavel pela vigilância das bicicletas, pois caso após oito horas depois do aluguel o cliente ainda não tenha devolvido a central entrará em contatato, para solucionar eventuais problemas. E após 24 horas ela é dada como furtada, e as informações do gps da bicicleta sera enviada a policia para gerar boletim de ocorrência.
    
    Para que o sistema seja capaz de realizar essas operações precisamos explicitar como serão armazenados os dados:
-   Será cadastado no sistema as bicicletas e bases. As bicicletas são compostas de um gps para monitoramento, e precisamos salvar o estado atual e historico de transação.
-
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) 
-Entrevista com o usuário e identificação dos requisitos.
-Descrição textual das regras de negócio definidas como um subconjunto do mundo real cujos elementos são propriedades que desejamos incluir, processar, armazenar, gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
+   Será cadastado no sistema as bicicletas e bases. As bicicletas são compostas de um gps para monitoramento, e precisamos salvar o estado atual e historico de transação. As bicicletas serão associadas para uma base. inicialmente durante a madrugada as bicicletas serão retornadas para a sua base de origem, mas com o decorrer do projeto e implantação de mais bases isso só será necessário quando um estudo de fluxo for implementado.
+   Os planos são:
+   Plano A -> 10 Horas, por 18,00
+   Plano B -> 20 Horas, por 30,00
+   Plano C -> 40 Horas, po 52,00
+   Pós -> Será necessario o cadastro de um cartão de crédito e ao final do mes sera gerado um valor de acordo com a utilização das bicicletas, quanto mais horas mais barato a hora vai ficando
+   Padrão -> A hora tem preço fixo de 2,00.
+   
+   Um usuario pode ficar bloqueado caso ocorra um furto sem justificativa legal (BO), e caso ele aloque bicicleta e utilize tempo a mais do informado. Esse só ficará desbloqueado com o pagamento do debito, mais uma multa no valor de 8,00. Um usuário bloqueado não é capaz de fazer alocações.
+   
+   O papel do funcionário nos primeiros meses é cadastrar novo usuarios, já que esses estara com um tablet, e tirar possiveis duvidas. Mas com o decorrer do projeto eles serão despensados ou realocados para novas unidades 
+   
 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)
 
-Neste ponto a codificação não e necessária, somente as ideias de telas devem ser criadas, o princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas ou descartadas 
-
-Sugestão: https://balsamiq.com/products/mockups/
-
-Alt text
+Criado mockups  básicos com as telas de cadastro no site, e também a interface do Parkimetro:
+Link -> https://drive.google.com/file/d/0B22ymfBw5MWbNHpMZW42OEktalE/view?usp=sharing
 
 4.1 TABELA DE DADOS DO SISTEMA:
 
-a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas.
-b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
-e deve ser criada antes do modelo conceitual
-c) Após criada esta tabela não deve ser modificada, pois será comparada com a tabela final na conclusão do trabalho
-4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
+A) Link Para a Tabela contendo todos as tabelas -> https://docs.google.com/spreadsheets/d/1Tv4MvbGYMJYsg7A18FsJ11nOlTepJXGwq3OGKQzNNQA/edit?usp=sharing
 
-a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-b) Crie uma lista com os 10 principais relatórios que podero ser obtidos por meio do sistema proposto!
-Marco de Entrega 01 em: (06/09/2017)
+B) Link Para as Tabelas com conteudo separado -> https://docs.google.com/spreadsheets/d/1ckgzBtnwG87dPVS5TfWTvOgr7Q7qvQbskPvVsCEe0kw/edit?usp=sharing
+
+4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
+A)
+O sistema pode fazer relatórios de alocação, de funcionários, utilização das bicicletas e planos.
+O objetivo dos relatórios é para ampliação do projeto, visando gerar dados para serem analisados
+e conseguir adequar o projeto a população local.
+
+B)
+O sistema poderá gerar os seguintes relatórios:
+
+1º Quantidade de usuários por planos;
+2ª Locação de bike por base
+3º Quantidade de horas médias
+4º Principais Rotas (BSx para BSy)
+5º Base com mais "sumiços"
+6º Regiões com maior numero de usuários
+7º Quantidade de bicicletas alocadas simuntaneamente
+8º Tempo médio entre Manunteção
+9º Faixa etária dos usuários
+10º Faturamento por Base
+
 5.MODELO CONCEITUAL
 
 A) NOTACAO ENTIDADE RELACIONAMENTO 
