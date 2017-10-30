@@ -65,36 +65,61 @@ O sistema poderá gerar os seguintes relatórios:
 
 5.MODELO CONCEITUAL
 
-A) NOTACAO ENTIDADE RELACIONAMENTO 
-    * Para nosso prótótipo limitaremos o modelo conceitual nas 6 principais entidades do escopo
-    * O protótipo deve possui no mínimo duas relações N para N
-    * o mínimo de entidades do modelo conceitual será igual a 5
-Alt text
+https://github.com/2Weels/2Weels/blob/master/BR_modelo.pdf
 
-B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
-C) QUALIDADE 
-    Garantir que a semântica dos atributos seja clara no esquema
-    Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-    e tuplas falsas
 5.1 Validação do Modelo Conceitual
 
 [Grupo01]: [Nomes dos que participaram na avaliação]
 [Grupo02]: [Nomes dos que participaram na avaliação]
 5.2 DECISÕES DE PROJETO
 
-[atributo]: [descrição da decisão]
+Data: Os campos de Data do Aluguel serão um tipo composto que armazenará data e hora, pois
+o aluguel é feito em horas e não em dias, criado a necessidade de se saber
+o dia juntamente com a hora.
 
-EXEMPLO:
-a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
-pode possuir para cada departamento mais de uma localização... 
-b) justifique!
+Endereco: Por padrão os campos de endereco são compostos e unitários, pois
+o sistema precisa de apenas um endereço relacionado a uma entidade
+
 5.3 DESCRIÇÃO DOS DADOS
+USUARIO: Tabela que armazenará no sistema os dados de todos usuarios que
+quiserem entrar para a 2Weels.<br/>
+[id_usuario]:Numero unico que indentifica um usuario<br/>
+[nome]: Campo que armazena os nomes dos clientes<br/>
+[cpf]: campo responsavel por validar a inclusao de um usuario<br/>
+[data_nascimento]: Campo que indenficará a idade do usuário<br/>
+[endereco]:Campo que indentificará o local residente dos usuários<br/>
+[num_tel]:Campo que registra um meio de contato com o cliente<br/>
+[num_cartao]:Campo que será usado para armazenar o numero onde será pago o plano pos<br/>
 
-[objeto]: [descrição do objeto]
+BICICLETAS: Tabela que armazena todo patrimorio em bicicletas da empresa. Guardando
+informções técnicas e também gerenciais<br/>
+[id_bicicleta]: Numero identificador unitário das bicicletas<br/>
+[local_atual]:Identifica o local atual de cada bicicleta. podendo ser uma base ou<br/>
+"em circulação" para indicar q a bicicleta esta sob posse de um usuário<br/>
+[num_gps]:Numero identificador do gps incerido nas bicicletas<br/>
+[data_manuntencao]: Como de tempos em tempos as bicicletas precisão ser recolhidas<br/>
+para manuntenção precisa-se guardar a data da ultima<br/>
 
-EXEMPLO:
-CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+BASE: Tabela que identifica os locais operantes do bicicletário<br/>
+[id_Base]: numero que identifica as bases<br/>
+[endereco] Campo que armazena o endereço das bases<br/>
+
+PLANO:
+[id_plano]: numero que identifica os planos<br/>
+[nome]: Nomo identificador no plano<br/>
+[descrição]: Campo que descreve o campo<br/>
+[numero_horas]: Campo que demonstra numero de horas de cada plano<br/>
+
+FUNCIONARIO: Tabela que armazena os dados dos funcionários que prestão
+serviços a empresa<br/>
+[id_funcionario]: Campo com numero identificador de um funcionario<br/>
+[nome]: Campo que armazena o nome dos funcionarios<br/>
+[cpf]: Campo que armazena um documento do funcionário<br/>
+[num_Carteira_trabalho]:Campo que armazena um documento do funcionário<br/>
+[identidade]:Campo que armazena um documento do funcionário<br/>
+[endereco] Campo que armazena o local residente de um funcionário<br/>
+[data_nascimento]:Campo que armazena a data de nascimento e consequentemente a idade<br/>
+
 6	MODELO LÓGICO
 
     a) inclusão do modelo lógico do banco de dados
