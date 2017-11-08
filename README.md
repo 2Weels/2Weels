@@ -1,4 +1,4 @@
-TRABALHO 01: Título do Trabalho
+TRABALHO 01: 2Wheels
 
 Trabalho desenvolvido durante a disciplina de BD1
 
@@ -39,9 +39,13 @@ Link -> https://drive.google.com/file/d/0B22ymfBw5MWbNHpMZW42OEktalE/view?usp=sh
 
 4.1 TABELA DE DADOS DO SISTEMA:
 
-A) Link Para a Tabela contendo todos as tabelas -> https://docs.google.com/spreadsheets/d/1Tv4MvbGYMJYsg7A18FsJ11nOlTepJXGwq3OGKQzNNQA/edit?usp=sharing
+A) Link Para a Tabela contendo todos as tabelas -> 
+View->  https://docs.google.com/spreadsheets/d/1Tv4MvbGYMJYsg7A18FsJ11nOlTepJXGwq3OGKQzNNQA/edit?usp=sharing
+Git-> https://github.com/2Weels/2Wheels/blob/master/tabelas%20detalhadas.ods
 
-B) Link Para as Tabelas com conteudo separado -> https://docs.google.com/spreadsheets/d/1ckgzBtnwG87dPVS5TfWTvOgr7Q7qvQbskPvVsCEe0kw/edit?usp=sharing
+B) Link Para as Tabelas com conteudo separado ->     
+View-> https://docs.google.com/spreadsheets/d/1ckgzBtnwG87dPVS5TfWTvOgr7Q7qvQbskPvVsCEe0kw/edit?usp=sharing
+Git-> https://github.com/2Weels/2Wheels/blob/master/tabelas%20detalhadas.ods
 
 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
 A)
@@ -73,6 +77,8 @@ https://github.com/2Weels/2Weels/blob/master/BR_modelo.pdf
 [Grupo02]: [Nomes dos que participaram na avaliação]
 5.2 DECISÕES DE PROJETO
 
+ID: Todas tabelas serão indexadas por um campo id, que cresce sequencialmente. O objetivo é tonar o sistema mais dinâmico;
+
 Data: Os campos de Data do Aluguel serão um tipo composto que armazenará data e hora, pois
 o aluguel é feito em horas e não em dias, criado a necessidade de se saber
 o dia juntamente com a hora.
@@ -90,6 +96,9 @@ quiserem entrar para a 2Weels.<br/>
 [endereco]:Campo que indentificará o local residente dos usuários<br/>
 [num_tel]:Campo que registra um meio de contato com o cliente<br/>
 [num_cartao]:Campo que será usado para armazenar o numero onde será pago o plano pos<br/>
+[sexo]:Campo que identifica o sexo do usuario<br/>
+[idade]:Campo que identifica a idade do usuario<br/>
+[estado_civil]:Campo que identifica o estado civil do usuario<br/>
 
 BICICLETAS: Tabela que armazena todo patrimorio em bicicletas da empresa. Guardando
 informções técnicas e também gerenciais<br/>
@@ -104,11 +113,11 @@ BASE: Tabela que identifica os locais operantes do bicicletário<br/>
 [id_Base]: numero que identifica as bases<br/>
 [endereco] Campo que armazena o endereço das bases<br/>
 
-PLANO:
+PLANO: Tabela que descreve os planos disponiveis para o usuário;<br/>
 [id_plano]: numero que identifica os planos<br/>
 [nome]: Nomo identificador no plano<br/>
-[descrição]: Campo que descreve o campo<br/>
-[numero_horas]: Campo que demonstra numero de horas de cada plano<br/>
+[descrição]: Campo que descreve o o plano, contem o numero de horas<br/>
+[Valor]: Campo que demonstra o valor de cada plano<br/>
 
 FUNCIONARIO: Tabela que armazena os dados dos funcionários que prestão
 serviços a empresa<br/>
@@ -119,6 +128,16 @@ serviços a empresa<br/>
 [identidade]:Campo que armazena um documento do funcionário<br/>
 [endereco] Campo que armazena o local residente de um funcionário<br/>
 [data_nascimento]:Campo que armazena a data de nascimento e consequentemente a idade<br/>
+
+ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
+[codigo]: Campo que identifica o codigo da operação<br/>
+[data_devolução] Campo que identifica a data e hora da devolução<br/>
+[horas_alugadas]: Campo que representa as horas alugadas pelo cliente<br/>
+
+DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
+[codigo]: Campo que identifica o codigo da operação<br/>
+[data_devolução] Campo que identifica a data e hora da devolução<br/>
+
 
 6	MODELO LÓGICO
 
