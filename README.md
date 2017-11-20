@@ -75,7 +75,7 @@ O sistema poderá gerar os seguintes relatórios:
 
 5.MODELO CONCEITUAL
 
-https://github.com/2Weels/2Weels/blob/master/BR_modelo.pdf
+![Alt text](https://github.com/2Weels/2Weels/blob/master/BR_modelo.pdf)
 
 5.1 Validação do Modelo Conceitual
 
@@ -179,7 +179,10 @@ DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
  a) Criar no mínimo 2 com operadores lógicos
  b) Criar no mínimo 2 com operadores aritméticos
  c) Criar no mínimo 2 com operação de renomear campo
-9.4	CONSULTAS QUE USAM OPERADORES LIKE (Mínimo 4) 
+ 
+9.4	CONSULTAS QUE USAM OPERADORES LIKE
+https://github.com/2Weels/2Wheels/blob/master/like-bicicletaCirculando.png
+https://github.com/2Weels/2Wheels/blob/master/like-nomeM.png
 
 Marco de Entrega 03 em: (Data definida no cronograma)
 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)
