@@ -163,8 +163,14 @@ DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
 OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) 
 
-9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)
-
+9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE
+      1: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.sql
+      imagem: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.png
+      
+      
+      2: https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.sql
+      imagem:https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.png
+      
 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS (Mínimo 6)
 
  a) Criar no mínimo 2 com operadores lógicos
