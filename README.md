@@ -75,7 +75,7 @@ O sistema poderá gerar os seguintes relatórios:
 
 5.MODELO CONCEITUAL
 
-![Alt text](https://github.com/2Weels/2Weels/blob/master/BR_modelo.pdf)
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Entidade-Relacionamento.png)
 
 5.1 Validação do Modelo Conceitual
 
