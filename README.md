@@ -32,6 +32,12 @@ A criação do banco de dados será realizada afim de criar suporte para a impla
    
    O papel do funcionário nos primeiros meses é cadastrar novo usuarios, já que esses estara com um tablet, e tirar possiveis duvidas. Mas com o decorrer do projeto eles serão despensados ou realocados para novas unidades 
    
+   De um usuario deseja-se saber: sexo,cpf,estado civil,nome,endereço,plano que ele aderiu;
+   De um plano deseja-se saber: Nome, descreção e valor;
+   De uma base deseja-se saber: endereço;
+   De uma Bicileta desej-se saber: Onde ela se encontra, numero de gps e data de manuntenção
+   
+   
 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)
 
 Criado mockups  básicos com as telas de cadastro no site, e também a interface do Parkimetro:
@@ -139,37 +145,34 @@ DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
 [data_devolução] Campo que identifica a data e hora da devolução<br/>
 
 
-6	MODELO LÓGICO
-
+6	MODELO LÓGICO<br/>
    https://github.com/2Weels/2Wheels/blob/master/MODELO-LOGICO.pdf
 
-7	MODELO FÍSICO
-
-    https://github.com/2Weels/2Wheels/blob/master/2Wheels_script_create.sql
+7	MODELO FÍSICO<br/>
+   https://github.com/2Weels/2Wheels/blob/master/2Wheels_script_create.sql
     
 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS
 
-8.1 DETALHAMENTO DAS INFORMAÇÕES
+8.1 DETALHAMENTO DAS INFORMAÇÕES<br/>
    https://github.com/2Weels/2Wheels/blob/master/inserts.sql
    
-8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
+8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS<br/>
    https://github.com/2Weels/2Wheels/blob/master/create-inserts.sql
     
-8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
+8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS<br/>
    https://github.com/2Weels/2Wheels/blob/master/drop-create-inserts.sql
    
 9	TABELAS E PRINCIPAIS CONSULTAS
 
-OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
-9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) 
+9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas)<br/> 
 
-9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE
-      1: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.sql
-      imagem: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.png
+9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE<br/>
+      1: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.sql<br/>
+      imagem: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.png<br/>
       
       
-      2: https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.sql
-      imagem:https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.png
+      2: https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.sql<br/>
+      imagem:https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.png<br/>
       
 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS (Mínimo 6)
 
