@@ -141,34 +141,23 @@ DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
 
 6	MODELO LÓGICO
 
-    a) inclusão do modelo lógico do banco de dados
-    b) verificação de correspondencia com o modelo conceitual 
-    (não serão aceitos modelos que não estejam em conformidade)
-Marco de Entrega 02 em: (Data definida no cronograma)
+   https://github.com/2Weels/2Wheels/blob/master/MODELO-LOGICO.pdf
+
 7	MODELO FÍSICO
 
-    a) inclusão das instruções de criacão das estruturas DDL 
-    (criação de tabelas, alterações, etc..)
+    https://github.com/2Weels/2Wheels/blob/master/2Wheels_script_create.sql
+    
 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS
 
 8.1 DETALHAMENTO DAS INFORMAÇÕES
-
-    a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físic
-    b) formato .SQL
+   https://github.com/2Weels/2Wheels/blob/master/inserts.sql
+   
 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
-
-    a) Junção dos scripts anteriores em um único script 
-    (create para tabelas e estruturas de dados + dados a serem inseridos)
-    b) Criar um novo banco de dados para testar a restauracao 
-    (em caso de falha na restauração o grupo não pontuará neste quesito)
-    c) formato .SQL
+   https://github.com/2Weels/2Wheels/blob/master/create-inserts.sql
+    
 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-
-    a) Junção dos scripts anteriores em um único script 
-    (Drop table + Create de tabelas e estruturas de dados + dados a serem inseridos)
-    b) Criar um novo banco de dados para testar a restauracao 
-    (em caso de falha na restauração o grupo não pontuará neste quesito)
-    c) formato .SQL
+   https://github.com/2Weels/2Wheels/blob/master/drop-create-inserts.sql
+   
 9	TABELAS E PRINCIPAIS CONSULTAS
 
 OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
