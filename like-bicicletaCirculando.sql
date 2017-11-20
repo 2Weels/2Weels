@@ -1,0 +1,1 @@
+﻿SELECT * FROM Bicicleta WHERE local_atual LIKE 'circulando'
