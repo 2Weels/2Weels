@@ -168,11 +168,11 @@ DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
 
 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE<br/>
       1: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.sql<br/>
-      imagem: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.png<br/>
+      imagem: ![Alt text](https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.png)<br/>
       
       
       2: https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.sql<br/>
-      imagem:https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.png<br/>
+      imagem:![Alt text](https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.png)<br/>
       
 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS (Mínimo 6)
 
