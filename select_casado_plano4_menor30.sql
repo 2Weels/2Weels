@@ -1,0 +1,1 @@
+﻿SELECT nome, sexo FROM USUARIO WHERE id_plano = 4 and estado_civil = 'casado' and idade < 30
