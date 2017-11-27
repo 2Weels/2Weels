@@ -1,0 +1,1 @@
+﻿SELECT num_tel,nome,sexo FROM USUARIO WHERE idade >= 18 and idade  <30 and sexo = 'F'
