@@ -1,0 +1,1 @@
+﻿SELECT * FROM PLANO WHERE valor <= 35
