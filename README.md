@@ -146,7 +146,7 @@ DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
 
 
 6	MODELO LÓGICO<br/>
-   https://github.com/2Weels/2Wheels/blob/master/MODELO-LOGICO.pdf
+    ![Alt text](https://github.com/2Weels/2Wheels/blob/master/MODELO-LOGICO.png)
 
 7	MODELO FÍSICO<br/>
    https://github.com/2Weels/2Wheels/blob/master/2Wheels_script_create.sql
@@ -175,12 +175,26 @@ DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS (Mínimo 6)
 
  a) Criar no mínimo 2 com operadores lógicos
+ 1:https://github.com/2Weels/2Wheels/blob/master/select_casado_plano4_menor30.sql
+ ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/select_casado_plano4_menor30.png)
+ 2:https://github.com/2Weels/2Wheels/blob/master/where-logico-2.sql
+ ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/where-logico-2.png)
+ 
  b) Criar no mínimo 2 com operadores aritméticos
+ 1:https://github.com/2Weels/2Wheels/blob/master/where-logico-1.sql
+ ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/where-logico-1.png)
+ 2:https://github.com/2Weels/2Wheels/blob/master/where-aritmetico-2.sql
+ ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/where-aritmetico-2.png)
+ 
  c) Criar no mínimo 2 com operação de renomear campo
+ 1:https://github.com/2Weels/2Wheels/blob/master/select_rename_1.sql
+ ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/select_rename_1.png)
+ 2:https://github.com/2Weels/2Wheels/blob/master/select_rename_2.sql
+ ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/select_rename_2.png)
  
 9.4	CONSULTAS QUE USAM OPERADORES LIKE
-https://github.com/2Weels/2Wheels/blob/master/like-bicicletaCirculando.png
-https://github.com/2Weels/2Wheels/blob/master/like-nomeM.png
+ ![Alt text](https://github.com/2Weels/2Wheels/blob/master/like-bicicletaCirculando.png)
+ ![Alt text](https://github.com/2Weels/2Wheels/blob/master/like-nomeM.png)
 
 Marco de Entrega 03 em: (Data definida no cronograma)
 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)
