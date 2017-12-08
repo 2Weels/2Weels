@@ -268,11 +268,19 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
    
 
 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE<br/>
-      1: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.sql<br/>
-      imagem: ![Alt text](https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.png)<br/>
-      2: https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.sql<br/>
-      imagem:![Alt text](https://github.com/2Weels/2Wheels/blob/master/where-homensAdultosSolteiros.png)<br/>
-      
+      1: Usuarios que estão no Plano Pre:</br>
+      <b>SELECT  * FROM usuario WHERE fk_plano_id_plano = 5 </b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectWhere/consulta_where_plano4.png)<br/>
+      </br>2:Bicicletas ques estão na base Verão:</br>
+      <b>SELECT  * FROM bicicleta WHERE local_Atual = 'Verão' </b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectWhere/consulta_where_baseVerao.png)<br/>
+      </br>3:Aluguel de bicicleta com status concluido:</br>
+      <b>SELECT  * FROM aluguel WHERE status = 'concluido'</b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectWhere/consulta_where_aluguelConcluido.png)<br/>
+      </br>4:Pessoas do sexo feminino cadastradas:</br>
+      <b>SELECT  * FROM pessoa WHERE sexo = 'F'<b/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectWhere/consulta_where_pessoasMulheres.png)<br/>
+
 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS (Mínimo 6)
 
  a) Criar no mínimo 2 com operadores lógicos
