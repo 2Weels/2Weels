@@ -195,7 +195,77 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
    
 9	TABELAS E PRINCIPAIS CONSULTAS
 
-9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas)<br/> 
+9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas)<br/>
+   PESSOAS:<br/>
+   
+   <b>SELECT * FROM pessoa</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_pessoas.png)<br/>
+   
+   USUARIOS:<br/>
+   
+   <b>SELECT * FROM usuario</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_usuarios.png)<br/>
+   
+   FUNCIONÁRIOS:<br/>
+   
+   <b>SELECT * FROM funcionario</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_funcionarios.png)<br/>
+   
+   PLANOS:<br/>
+   
+   <b>SELECT * FROM plano</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_planos.png)<br/>
+   
+   BICICLETAS:<br/>
+   
+   <b>SELECT * FROM bicicleta</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_bicicletas.png)<br/>
+   
+   BASES:<br/>
+   
+   <b>SELECT * FROM base</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_bases.png)<br/>
+   
+   ALUGUEL:<br/>
+   
+   <b>SELECT * FROM aluguel</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_aluguel.png)<br/>
+   
+   ENDERECOS:<br/>
+   
+   <b>SELECT * FROM endereco</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_enderecos.png)<br/>
+   
+   BAIRRO:<br/>
+   
+   <b>SELECT * FROM bairro</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_bairros.png)<br/>
+   
+   CIDADE:<br/>
+   
+   <b>SELECT * FROM cidade</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_cidade.png)<br/>
+   
+   ESTADOS:<br/>
+   
+   <b>SELECT * FROM estado</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_estado.png)<br/>
+   
+   PAIS:<br/>
+   
+   <b>SELECT * FROM pais</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_pais.png)<br/>
+   
+   RESIDE:<br/>
+   
+   <b>SELECT * FROM reside</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_reside.png)<br/>
+   
+   ALOCADA:<br/>
+   
+   <b>SELECT * FROM alocada</b></br>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectAll/consulta_all_alocada.png)<br/>
+   
 
 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE<br/>
       1: https://github.com/2Weels/2Wheels/blob/master/where-CasadosPlanoPre.sql<br/>
