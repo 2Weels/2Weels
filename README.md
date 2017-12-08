@@ -33,9 +33,10 @@ A criação do banco de dados será realizada afim de criar suporte para a impla
    O papel do funcionário nos primeiros meses é cadastrar novo usuarios, já que esses estara com um tablet, e tirar possiveis duvidas. Mas com o decorrer do projeto eles serão despensados ou realocados para novas unidades 
    
    De um usuario deseja-se saber: sexo,cpf,estado civil,nome,endereço,plano que ele aderiu;
-   De um plano deseja-se saber: Nome, descreção e valor;
-   De uma base deseja-se saber: endereço;
-   De uma Bicileta desej-se saber: Onde ela se encontra, numero de gps e data de manuntenção
+   De um plano deseja-se saber: Nome, descrição e valor;
+   De uma base deseja-se saber: endereço e nome;
+   De uma Bicileta desej-se saber: Onde ela se encontra, numero de gps
+   De um funcionario deseja-se sabe: Carteira de trabalho, Identidade, endereço, sexo, estado_civil, nome completo;
    
    
 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)
@@ -75,7 +76,7 @@ O sistema poderá gerar os seguintes relatórios:
 
 5.MODELO CONCEITUAL
 
-   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Entidade-Relacionamento.png)
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/modelo_conceitual.png)
 
 5.1 Validação do Modelo Conceitual
 
@@ -93,31 +94,63 @@ Endereco: Por padrão os campos de endereco são compostos e unitários, pois
 o sistema precisa de apenas um endereço relacionado a uma entidade
 
 5.3 DESCRIÇÃO DOS DADOS
-USUARIO: Tabela que armazenará no sistema os dados de todos usuarios que
-quiserem entrar para a 2Weels.<br/>
+PESSOA: Tabela que armazenará no sistema os dados de todas pessoas que precisam de cadastro na 2Wheels.<br/>
 [id_usuario]:Numero unico que indentifica um usuario<br/>
-[nome]: Campo que armazena os nomes dos clientes<br/>
+[nome_completo]: Campo que armazena os nomes dos clientes<br/>
 [cpf]: campo responsavel por validar a inclusao de um usuario<br/>
 [data_nascimento]: Campo que indenficará a idade do usuário<br/>
-[endereco]:Campo que indentificará o local residente dos usuários<br/>
-[num_tel]:Campo que registra um meio de contato com o cliente<br/>
-[num_cartao]:Campo que será usado para armazenar o numero onde será pago o plano pos<br/>
-[sexo]:Campo que identifica o sexo do usuario<br/>
-[idade]:Campo que identifica a idade do usuario<br/>
 [estado_civil]:Campo que identifica o estado civil do usuario<br/>
+[sexo]:Campo que identifica o sexo do usuario<br/>
+
+USUARIO: Tablela que herda de pessoas para especificar um usuario<br/>
+[num_tel]:Campo que registra um meio de contato com o cliente<br/>
+[horas)usadas]:Campo que será usado para armazenar quantidade de horas por pessoa<br/>
+
+RESIDE: Tablea que associa um usuario a um endereço:<br/>
+[FK_Pessoa_id_pessoa]:Numero identificador de uma pessoa;<br/>
+[FK_Endereco_id_endereco]:Numero identificador de um endereco</br>
+
+ENDERECO: Tabela que armazena todos endereços das entidades do sistema<br/>
+[id_endereco]:Numero serial que identifica um
+[rua]:Campo que armazena o nome da Rua de um endereco<br/>
+[CEP]:Campo que registra um CEP de um endereco<br/>
+[numero]:Campo inteiro que armazena o numero da casa de um endereço<br/>
+
+BAIRRO:Tabela que armazena os bairros de um endereco<br/>
+[id_bairro]:Numero que representa um bairro<br/>
+[nome]:Campo que registra o nome do bairro<br/>
+[FK_Cidade_id_cidade]:Chave estrageira para uma cidade<br/>
+
+CIDADE:Tabela que armazena as cidades de um endereco<br/>
+[id_cidade]:Numero que representa uma cidade<br/>
+[nome]:Campo que registra o nome da cidade<br/>
+[FK_Estado_id_estado]:Chave estrageira para um estado<br/>
+
+ESTADO:Tabela que armazena os estados de um endereco<br/>
+[id_estado]:Numero que representa um estado<br/>
+[nome]:Campo que registra o nome do estado<br/>
+[FK_Pais_id_pais]:Chave estrageira para um país<br/>
+
+PAIS:Tabela que armazena os paises de um endereco<br/>
+[id_pais]:Numero que representa um país<br/>
+[nome]:Campo que registra o nome do país<br/>
 
 BICICLETAS: Tabela que armazena todo patrimorio em bicicletas da empresa. Guardando
 informções técnicas e também gerenciais<br/>
 [id_bicicleta]: Numero identificador unitário das bicicletas<br/>
-[local_atual]:Identifica o local atual de cada bicicleta. podendo ser uma base ou<br/>
-"em circulação" para indicar q a bicicleta esta sob posse de um usuário<br/>
+[local_atual]:Identifica o local atual de cada bicicleta. Obtido atravez de combinação de latitude e longitude<br/>
 [num_gps]:Numero identificador do gps incerido nas bicicletas<br/>
-[data_manuntencao]: Como de tempos em tempos as bicicletas precisão ser recolhidas<br/>
-para manuntenção precisa-se guardar a data da ultima<br/>
+[latitude]:Numero repesentante da latitude da posição atual da bicicleta<br>
+[longitude]:Numero repesentante da longitude da posição atual da bicicleta<br>
+
 
 BASE: Tabela que identifica os locais operantes do bicicletário<br/>
 [id_Base]: numero que identifica as bases<br/>
-[endereco] Campo que armazena o endereço das bases<br/>
+[nome] Campo que armazena o nome das bases<br/>
+
+ALOCADA: Tablea que associa uma base a um endereço:<br/>
+[FK_Base_id_base]:Numero identificador de uma base;<br/>
+[FK_Endereco_id_endereco]:Numero identificador de um endereco</br>
 
 PLANO: Tabela que descreve os planos disponiveis para o usuário;<br/>
 [id_plano]: numero que identifica os planos<br/>
@@ -128,25 +161,23 @@ PLANO: Tabela que descreve os planos disponiveis para o usuário;<br/>
 FUNCIONARIO: Tabela que armazena os dados dos funcionários que prestão
 serviços a empresa<br/>
 [id_funcionario]: Campo com numero identificador de um funcionario<br/>
-[nome]: Campo que armazena o nome dos funcionarios<br/>
-[cpf]: Campo que armazena um documento do funcionário<br/>
 [num_Carteira_trabalho]:Campo que armazena um documento do funcionário<br/>
 [identidade]:Campo que armazena um documento do funcionário<br/>
-[endereco] Campo que armazena o local residente de um funcionário<br/>
-[data_nascimento]:Campo que armazena a data de nascimento e consequentemente a idade<br/>
 
 ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
 [codigo]: Campo que identifica o codigo da operação<br/>
-[data_devolução] Campo que identifica a data e hora da devolução<br/>
+[hora_aluguel]:Campo que registra a hora de um aluguel<br/>
+[data_aluguel]:Campo que identifica a data do aluguel<br/>
+[hora_devolucao]:Campo que registra a hora de uma devolução<br/>
+[data_devolução]:Campo que identifica a data da devolução<br/>
 [horas_alugadas]: Campo que representa as horas alugadas pelo cliente<br/>
-
-DEVOLUÇÕES: Tabela que registrará as devoluções dos clientes<br/>
-[codigo]: Campo que identifica o codigo da operação<br/>
-[data_devolução] Campo que identifica a data e hora da devolução<br/>
-
+[valor_pago]:Campo que registra o valor pago pelos clientes no algueul<br/>
+[status]:Campo de estado de um Aluguel: "Concluido","Circulando","Atrasado"<br/>
+[FK_Pessoa_id_pessoa]:Campo que representa a pessoa que realizou o aluguel<br/>
+[FK_Bicicleta_id_bicicleta]:Campo que representa a bicicleta alugada<br/>
 
 6	MODELO LÓGICO<br/>
-    ![Alt text](https://github.com/2Weels/2Wheels/blob/master/MODELO-LOGICO.png)
+    ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/modelo_logico.png)
 
 7	MODELO FÍSICO<br/>
    https://github.com/2Weels/2Wheels/blob/master/2Wheels_script_create.sql
