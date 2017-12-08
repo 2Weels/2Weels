@@ -281,25 +281,31 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
       <b>SELECT  * FROM pessoa WHERE sexo = 'F'<b/><br/>
       ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectWhere/consulta_where_pessoasMulheres.png)<br/>
 
-9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS (Mínimo 6)
+9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS
 
- a) Criar no mínimo 2 com operadores lógicos
- 1:https://github.com/2Weels/2Wheels/blob/master/select_casado_plano4_menor30.sql
- ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/select_casado_plano4_menor30.png)
- 2:https://github.com/2Weels/2Wheels/blob/master/where-logico-2.sql
- ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/where-logico-2.png)
+ a) Criar no mínimo 2 com operadores lógicos<br/>
+      1: Usuarios mulheres que possuem vinte anos ou menos:</br>
+      <b>SELECT  * FROM pessoa WHERE sexo = 'F' AND extract('year' from pessoa.data_nascimento) >= 1997  </b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLogico/consulta_where_logico_1.png)<br/>
+      </br>2:Usuarios homens com mais de trinta anos</br>
+      <b>SELECT  * FROM pessoa WHERE sexo = 'M' AND extract('year' from pessoa.data_nascimento) <= 1987 </b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLogico/consulta_where_logico_2.png)<br/>
  
- b) Criar no mínimo 2 com operadores aritméticos
- 1:https://github.com/2Weels/2Wheels/blob/master/where-logico-1.sql
- ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/where-logico-1.png)
- 2:https://github.com/2Weels/2Wheels/blob/master/where-aritmetico-2.sql
- ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/where-aritmetico-2.png)
+ b) Criar no mínimo 2 com operadores aritméticos<br/>
+      1: Alugueis com valor pago superior a R$4,00:</br>
+      <b>SELECT  * FROM aluguel WHERE valor_pago > 4</b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLogico/consulta_where_aritmetico_1.png)<br/>
+      </br>2:Planos que possuem valor inferior a R$30,00</br>
+      <b>SELECT  * FROM plano WHERE valor < 30 </b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLogico/consulta_where_aritmetico_2.png)<br/>
  
- c) Criar no mínimo 2 com operação de renomear campo
- 1:https://github.com/2Weels/2Wheels/blob/master/select_rename_1.sql
- ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/select_rename_1.png)
- 2:https://github.com/2Weels/2Wheels/blob/master/select_rename_2.sql
- ![Alt_text](https://github.com/2Weels/2Wheels/blob/master/select_rename_2.png)
+ c) Criar no mínimo 2 com operação de renomear campo <br/>
+      1: Homens cadastrados e sua data de nascimento:</br>
+      <b>SELECT  nome_completo as "Nome pessoa",data_nascimento as "Nascido em" FROM pessoa WHERE sexo = 'M'  </b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLogico/consulta_rename_1.png)<br/>
+      </br>2:Bicicletas e onde estão estacionadas:</br>
+      <b>SELECT id_bicicleta as "Numero da bike",local_atual as "Estacionado na base" FROM bicicleta</b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLogico/consulta_rename_2.png)<br/>
  
 9.4	CONSULTAS QUE USAM OPERADORES LIKE
  ![Alt text](https://github.com/2Weels/2Wheels/blob/master/like-bicicletaCirculando.png)
