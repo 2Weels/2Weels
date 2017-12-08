@@ -1,0 +1,1 @@
+Consulta todos dados das tabelas
