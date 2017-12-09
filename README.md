@@ -308,17 +308,131 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
       ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLogico/consulta_rename_2.png)<br/>
  
 9.4	CONSULTAS QUE USAM OPERADORES LIKE
- ![Alt text](https://github.com/2Weels/2Wheels/blob/master/like-bicicletaCirculando.png)
- ![Alt text](https://github.com/2Weels/2Wheels/blob/master/like-nomeM.png)
+      1: Pessoas que possuem nome com Letra 'M' e 'L':</br>
+      <b>SELECT * FROM pessoa WHERE nome_completo ILIKE '%M%' AND nome_completo ILIKE '%l%'</b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLike/consulta_like_1.png)<br/>
+      2: Bairros que possuem Nome começados com 'Praia':</br>
+      <b>SELECT * FROM bairro WHERE nome ILIKE 'Praia%'</b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLike/consulta_like_2.png)<br/>
+      3: Pessoas que possuem Sobrenome começado com 'M':</br>
+      <b>SELECT * FROM pessoa WHERE nome_completo ILIKE '%M%' AND nome_completo ILIKE '%l%'</b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLike/consulta_like_3.png)<br/>
+      4: Bases que possuem a Letra 'A' em seu nome:</br>
+      <b>SELECT* FROM base WHERE nome_base ILIKE '%a%'</b></br>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Scritpts/SelectLike/consulta_like_4.png)<br/>
 
-Marco de Entrega 03 em: (Data definida no cronograma)
-9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)
+9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS<br/>
+      Mudandça de nome de todas as Bases:<br/>
+      <b>UPDATE base SET nome_base = 'Norte' WHERE nome_base ILIKE 'Verão';<br/>
+      UPDATE base SET nome_base = 'Sul' WHERE nome_base ILIKE 'Outono';<br/>
+      UPDATE base SET nome_base = 'Leste' WHERE nome_base ILIKE 'Inverno';<br/>
+      UPDATE base SET nome_base = 'Oeste' WHERE nome_base ILIKE 'Primavera';</b><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Update_1.png)<br/>
+      Exclusão de duas bicicletas:<br/>
+      <b>DELETE FROM bicicleta WHERE id_bicicleta = 17;<br/>
+      DELETE FROM bicicleta WHERE id_bicicleta = 18;<b/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Update_2.png)<br/>
 
-9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)
-
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
-9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO (Mínimo 6)
+9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO<br/>
+1:Junção de todas tabelas, para caber a imgagem aqui, escolhi so os principais campos.<br/>
+<b>SELECT            pessoa.nome_completo,plano.nome,endereco,aluguel.id_aluguel,aluguel.data_aluguel,data_devolucao,base.nome_base,bicicleta.id_bicicleta FROM pessoa <br/>
+	JOIN usuario ON pessoa.id_pessoa = usuario.fk_pessoa_id_pessoa <br/>
+	JOIN plano  ON usuario.fk_plano_id_plano = plano.id_plano<br/>
+	JOIN aluguel ON pessoa.id_pessoa = aluguel.fk_Pessoa_id_pessoa<br/>
+	JOIN bicicleta ON aluguel.fk_Bicicleta_id_bicicleta = bicicleta.id_bicicleta<br/>
+	JOIN base ON bicicleta.fk_base_id_base = base.id_base<br/>
+	JOIN funcionario ON base.fk_funcionario_fk_pessoa_id_pessoa = funcionario.fk_pessoa_id_pessoa<br/>
+	JOIN reside ON pessoa.id_pessoa = reside.fk_pessoa_id_pessoa<br/>
+	JOIN endereco ON reside.fk_endereco_id_endereco = endereco.id_endereco<br/>
+	JOIN bairro ON bairro.id_bairro = endereco.fk_bairro_id_bairro<br/>
+	JOIN cidade ON cidade.id_cidade = bairro.fk_cidade_id_cidade<br/>
+	JOIN estado ON estado.id_estado = cidade.fk_estado_id_estado<br/>
+	JOIN pais ON pais.id_pais = estado.fk_pais_id_pais<b/><br/><br/>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Join/Join%20todas%20tabelas.png)<br/>
+   <br/><br/>
+   2: Funcionarios e seus endereços<br/>
+   <b>SELECT pessoa,endereco,bairro.nome,cidade.nome,estado.nome,pais.nome FROM pessoa <br/>
+	JOIN funcionario ON pessoa.id_pessoa = funcionario.fk_pessoa_id_pessoa<br/> 	
+	JOIN reside ON pessoa.id_pessoa = reside.fk_pessoa_id_pessoa<br/>
+	JOIN endereco ON reside.fk_endereco_id_endereco = endereco.id_endereco<br/>
+	JOIN bairro ON bairro.id_bairro = endereco.fk_bairro_id_bairro<br/>
+	JOIN cidade ON cidade.id_cidade = bairro.fk_cidade_id_cidade<br/>
+	JOIN estado ON estado.id_estado = cidade.fk_estado_id_estado<br/>
+	JOIN pais ON pais.id_pais = estado.fk_pais_id_pais<br/>
+	ORDER BY pessoa.data_nascimento<b/><br/><br/>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Join/join_order_funcionario_endereco.png)<br/>
+   <br/><br/>
+   3: Pessoas e seus planos por ordem alfabetica<br/>
+   <b>SELECT pessoa.nome_completo,plano.nome FROM pessoa<br/>
+	JOIN usuario ON pessoa.id_pessoa = usuario.fk_pessoa_id_pessoa <br/>
+	JOIN plano  ON usuario.fk_plano_id_plano = plano.id_plano<br/>
+	ORDER BY nome_completo<br/><b>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Join/join_order_pessoa_plano.png)<br/>
+   <br/><br/>
+   4: Bicicletas e suas bases fixas ordenadas pelo nome da base<br/>
+   <b>SELECT bicicleta.id_bicicleta, bicicleta.longitude, bicicleta.latitude,base.nome_base FROM bicicleta<br/>
+	JOIN base ON bicicleta.fk_base_id_base = base.id_base<br/>
+	ORDER BY nome_base<b/><br/><br/>
+   ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Join/join_order_bicicleta_base.png)<br/>
+   <br/><br/>
+    5: Alugueis com nome e a bicicleta<br/>
+    <b>SELECT nome_completo,aluguel.hora_aluguel as inicio,aluguel.data_aluguel,aluguel.hora_devolucao AS fim,<br/>
+    aluguel.data_devolucao,bicicleta.id_bicicleta <br/>
+    FROM aluguel<br/>
+    JOIN bicicleta ON bicicleta.id_bicicleta = aluguel.fk_bicicleta_id_bicicleta<br/>
+    JOIN pessoa ON pessoa.id_pessoa = aluguel.fk_pessoa_id_pessoa<br/>
+    ORDER BY data_aluguel<b/><br/><br/>
+    ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Join/join_order_aluguel_pessoa_bicicleta.png)<br/>
+    <br/><br/>
+     6: Cidades e seus bairros cadastrados:<br/>
+      <b>SELECT bairro.nome, cidade.nome FROM bairro<br/>
+      JOIN cidade ON cidade.id_cidade = bairro.fk_cidade_id_cidade<br/>
+      ORDER BY cidade.nome<b/><br/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Join/join_order_bairro_cidade.png)<br/>
+      <br/><br/>
+         
+9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO
+   1: Quantidade de pessoas agrupadas por sexo:<br/>
+      <b>SELECT sexo,count(sexo) <br/>
+      FROM pessoa<br/>
+      GROUP BY sexo<b/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/group_By/group_by_1.png)<br/>
+      <br/><br/>
+    2: Quantidade de bicicletas agrupadas por base:<br/>
+      <b>SELECT fk_base_id_base,count(fk_base_id_base) as "Quantidade de bicicletas"<br/>
+	   FROM bicicleta<br/>
+      GROUP BY fk_base_id_base<b><br/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/group_By/group_by_2.png)<br/>
+      <br/><br/>
+   3: Quantidade de pessoas agrupadas por plano:<br/>
+      <b>SELECT fk_plano_id_plano,count(fk_plano_id_plano) as "Quantidade de pessoas"<br/>
+      FROM usuario<br/>
+      GROUP BY fk_plano_id_plano<br/>
+      ORDER BY fk_plano_id_plano<b/><br/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/group_By/group_by_3.png)<br/>
+      <br/><br/>
+         
+         ###########TO DO##############
+   4: Quantidade de pessoas agrupadas por sexo:<br/>
+      <b>SELECT sexo,count(sexo) <br/>
+      FROM pessoa<br/>
+      GROUP BY sexo<b/><br/>
+      ![Alt text]()<br/>
+      <br/><br/>
+   5: Quantidade de pessoas agrupadas por sexo:<br/>
+      <b>SELECT sexo,count(sexo) <br/>
+      FROM pessoa<br/>
+      GROUP BY sexo<b/><br/>
+      ![Alt text]()<br/>
+      <br/><br/>
+   6: Quantidade de pessoas agrupadas por sexo:<br/>
+      <b>SELECT sexo,count(sexo) <br/>
+      FROM pessoa<br/>
+      GROUP BY sexo<b/><br/>
+      ![Alt text]()<br/>
+      <br/><br/>
+   
+    
 
 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)
 
