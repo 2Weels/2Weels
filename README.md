@@ -391,7 +391,7 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
       ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/Join/join_order_bairro_cidade.png)<br/>
       <br/><br/>
          
-9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO
+9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO<br/>
    1: Quantidade de pessoas agrupadas por sexo:<br/>
       <b>SELECT sexo,count(sexo) <br/>
       FROM pessoa<br/>
@@ -411,25 +411,24 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
       ORDER BY fk_plano_id_plano<b/><br/><br/>
       ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/group_By/group_by_3.png)<br/>
       <br/><br/>
-         
-         ###########TO DO##############
-   4: Quantidade de pessoas agrupadas por sexo:<br/>
-      <b>SELECT sexo,count(sexo) <br/>
-      FROM pessoa<br/>
-      GROUP BY sexo<b/><br/>
-      ![Alt text]()<br/>
+   4: Quantidade de enderecos por bairro:<br/>
+      <b>SELECT count(bairro),bairro.nome FROM endereco AS end_sist<br/>
+	INNER JOIN bairro ON end_sist.fk_bairro_id_bairro = bairro.id_bairro<br/>
+	GROUP BY end_sist.fk_bairro_id_bairro,bairro.nome<b/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/group_By/group_by_3.png)<br/>
       <br/><br/>
-   5: Quantidade de pessoas agrupadas por sexo:<br/>
-      <b>SELECT sexo,count(sexo) <br/>
-      FROM pessoa<br/>
-      GROUP BY sexo<b/><br/>
-      ![Alt text]()<br/>
+   5: Quantidade de enderecos por Cidade:<br/>
+      <bSELECT count(cidade),cidade.nome FROM endereco AS end_sist<br/>
+	INNER JOIN bairro ON end_sist.fk_bairro_id_bairro = bairro.id_bairro<br/>
+	INNER JOIN cidade ON bairro.fk_cidade_id_cidade = cidade.id_cidade<br/>
+	GROUP BY cidade.nomeb/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/group_By/group_by_3.png)<br/>
       <br/><br/>
-   6: Quantidade de pessoas agrupadas por sexo:<br/>
-      <b>SELECT sexo,count(sexo) <br/>
-      FROM pessoa<br/>
-      GROUP BY sexo<b/><br/>
-      ![Alt text]()<br/>
+   6: Quantidade de alugueis por usuario:<br/>
+      <b>SELECT count(fk_pessoa_id_pessoa),pessoa.nome_completo FROM aluguel<br/>
+	INNER JOIN pessoa ON pessoa.id_pessoa = aluguel.fk_pessoa_id_pessoa<br/>
+	GROUP BY pessoa.nome_completo<b/><br/>
+      ![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/group_By/group_by_3.png)<br/>
       <br/><br/>
    
     
@@ -437,46 +436,32 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)
 
 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)
-
+	1: View para visualizar os documentos de um funcionario:<br/>
+      	<b>CREATE VIEW funcionario_dados AS
+	SELECT identidade,carteira_trab,nome_completo FROM pessoa
+	INNER JOIN funcionario AS func
+	ON func.fk_pessoa_id_pessoa = pessoa.id_pessoa<b/><br/><br/>
+      	![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/view/view_1.png)<br/>
+      	<br/><br/>
+	2: View para visualizar os dados de uma bicicleta
+	<b>
+	CREATE VIEW dados_bike AS
+	SELECT * FROM bicicleta;
+	<b/><br/><br/>
+      	![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/view/view_2.png)<br/>
+	3: ############TO DO###############
     a) Uma junção que envolva Self Join
     b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
-9.10	SUBCONSULTAS (Mínimo 3)
-
-10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)
-
-11	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS
-
-    a) Outros grupos deverão ser capazes de restaurar o banco 
-    b) executar todas as consultas presentes no trabalho
-    c) executar códigos que tenham sido construídos para o trabalho 
-    d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
-12 DIFICULDADES ENCONTRADAS PELO GRUPO
-
-13 TRABALHO DE MINERAÇÃO DE DADOS
-
-    a) captura das informaçõs
-    b) integração com banco de dados em desenvolvimento
-    c) atualização da documentação do trabalho incluindo a mineração de dados
-13 FORMATACAO NO GIT: https://help.github.com/articles/basic-writing-and-formatting-syntax/
-
-14 Backup completo do banco de dados postgres
-
-a) deve ser realizado no formato "backup" 
-    (Em Dump Options #1 Habilitar opções Don't Save Owner e Privilege)
-b) antes de postar o arquivo no git o mesmo deve ser testado/restaurado por outro grupo de alunos/dupla
-c) informar aqui o grupo de alunos/dupla que realizou o teste.
-Marco de Entrega 04/Entrega Final em: (Data definida no cronograma)
-OBSERVAÇÕES IMPORTANTES
-
-Todos os arquivos que fazem parte do projeto (Imagens, pdfs, arquivos fonte, etc..), devem estar presentes no GIT. Os arquivos do projeto vigente não devem ser armazenados em quaisquer outras plataformas.
-
-Caso existam arquivos com conteúdos sigilosos, comunicar o professor que definirá em conjunto com o grupo a melhor forma de armazenamento do arquivo.
-Todos os grupos deverão fazer Fork deste repositório e dar permissões administrativas ao usuário deste GIT, para acompanhamento do trabalho.
-
-Os usuários criados no GIT devem possuir o nome de identificação do aluno (não serão aceitos nomes como Eu123, meuprojeto, pro456, etc). Em caso de dúvida comunicar o professor.
-
-Link para BrModelo:
-http://sis4.com/brModelo/brModelo/download.html 
-
-Link para curso de GIT
-https://www.youtube.com/curso_git
+9.10	SUBCONSULTAS 
+	1: Consultar pessoas que estao nos planos Pós e no plano Pre:<br/>
+      	<b>SELECT * FROM usuario<br/>
+	WHERE fk_plano_id_plano IN (<br/>
+	SELECT id_plano FROM plano WHERE id_plano > 3)<b/><br/><br/>
+      	![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/subconsulta/subconsulta_1.png)<br/>
+      	<br/><br/>
+	2: Consultar bicicleta que estao nas bases Norete e Oeste<br/>
+      	<b>SELECT id_bicicleta,local_atual FROM bicicleta
+	WHERE (fk_base_id_base, local_atual)  IN (
+	SELECT DISTINCT id_base,nome_base FROM base WHERE id_base <3)<b/><br/><br/>
+      	![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/subconsulta/subconsulta_2.png)<br/>
+      	<br/><br/>
