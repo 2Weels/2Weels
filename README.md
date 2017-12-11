@@ -435,7 +435,7 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
 
 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)
 
-9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)
+9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br/>
 	1: View para visualizar os documentos de um funcionario:<br/>
       	<b>CREATE VIEW funcionario_dados AS
 	SELECT identidade,carteira_trab,nome_completo FROM pessoa
@@ -449,10 +449,7 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
 	SELECT * FROM bicicleta;
 	<b/><br/><br/>
       	![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/view/view_2.png)<br/>
-	3: ############TO DO###############
-    a) Uma junção que envolva Self Join
-    b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
-9.10	SUBCONSULTAS 
+9.10	SUBCONSULTAS <br/>
 	1: Consultar pessoas que estao nos planos Pós e no plano Pre:<br/>
       	<b>SELECT * FROM usuario<br/>
 	WHERE fk_plano_id_plano IN (<br/>
@@ -460,8 +457,8 @@ ALUGUEL: Tabela que registrará os alugueis dos cliente<br/>
       	![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/subconsulta/subconsulta_1.png)<br/>
       	<br/><br/>
 	2: Consultar bicicleta que estao nas bases Norete e Oeste<br/>
-      	<b>SELECT id_bicicleta,local_atual FROM bicicleta
-	WHERE (fk_base_id_base, local_atual)  IN (
+      	<b>SELECT id_bicicleta,local_atual FROM bicicleta<br/>
+	WHERE (fk_base_id_base, local_atual)  IN (<br/>
 	SELECT DISTINCT id_base,nome_base FROM base WHERE id_base <3)<b/><br/><br/>
       	![Alt text](https://github.com/2Weels/2Wheels/blob/master/Imagens/subconsulta/subconsulta_2.png)<br/>
       	<br/><br/>
